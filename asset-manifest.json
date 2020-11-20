@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/greenmarket-e-commerce/static/css/main.0385f92f.chunk.css",
+    "main.js": "/greenmarket-e-commerce/static/js/main.e6f4cac1.chunk.js",
+    "main.js.map": "/greenmarket-e-commerce/static/js/main.e6f4cac1.chunk.js.map",
+    "runtime-main.js": "/greenmarket-e-commerce/static/js/runtime-main.bda22a05.js",
+    "runtime-main.js.map": "/greenmarket-e-commerce/static/js/runtime-main.bda22a05.js.map",
+    "static/css/2.4f66583c.chunk.css": "/greenmarket-e-commerce/static/css/2.4f66583c.chunk.css",
+    "static/js/2.acfbe61c.chunk.js": "/greenmarket-e-commerce/static/js/2.acfbe61c.chunk.js",
+    "static/js/2.acfbe61c.chunk.js.map": "/greenmarket-e-commerce/static/js/2.acfbe61c.chunk.js.map",
+    "static/js/3.bb7647ee.chunk.js": "/greenmarket-e-commerce/static/js/3.bb7647ee.chunk.js",
+    "static/js/3.bb7647ee.chunk.js.map": "/greenmarket-e-commerce/static/js/3.bb7647ee.chunk.js.map",
+    "index.html": "/greenmarket-e-commerce/index.html",
+    "static/css/2.4f66583c.chunk.css.map": "/greenmarket-e-commerce/static/css/2.4f66583c.chunk.css.map",
+    "static/css/main.0385f92f.chunk.css.map": "/greenmarket-e-commerce/static/css/main.0385f92f.chunk.css.map",
+    "static/js/2.acfbe61c.chunk.js.LICENSE.txt": "/greenmarket-e-commerce/static/js/2.acfbe61c.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/greenmarket-e-commerce/static/media/outline-icons.ddae9b1b.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bda22a05.js",
+    "static/css/2.4f66583c.chunk.css",
+    "static/js/2.acfbe61c.chunk.js",
+    "static/css/main.0385f92f.chunk.css",
+    "static/js/main.e6f4cac1.chunk.js"
+  ]
+}
