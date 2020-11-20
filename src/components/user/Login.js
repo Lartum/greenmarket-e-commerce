@@ -1,9 +1,9 @@
 import  React, { useEffect } from 'react'
 import { Button, Form } from 'semantic-ui-react'
-import { googleProvider, firebaseAuth, facebookProvider } from '../firebase/firebase'
+import { googleProvider, firebaseAuth, facebookProvider } from '../../firebase/firebase'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { currentUser } from '../redux/slices/auth'
+import { currentCustomer } from '../../redux/slices/auth'
 
 const Login = () => {
 
@@ -26,12 +26,12 @@ useEffect(() =>{
 
 const handleGoogleAuth = async () =>{
    await firebaseAuth.signInWithPopup(googleProvider)
-   dispatch(currentUser())
+   dispatch(currentCustomer())
  }
 
  const handleFacebookAuth = async () =>{
    const result = await firebaseAuth.signInWithPopup(facebookProvider)
-   dispatch(currentUser(result.credential.idToken))
+   dispatch(currentCustomer(result.credential.idToken))
  }
  return(
     <>

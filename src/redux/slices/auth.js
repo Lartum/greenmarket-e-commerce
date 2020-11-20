@@ -2,47 +2,74 @@ import { createSlice } from '@reduxjs/toolkit'
 import { firebaseAuth  } from '../../firebase/firebase'
 
 
-const initialUser = localStorage.getItem('userData')
-                    ? localStorage.getItem('userData')
-                    :null
+const initialCustomer = localStorage.getItem('customerData')
+                    ? localStorage.getItem('customerData')
+                    : null
 
-
+const initalAdmin = null                    
 const userSlice = createSlice({
     name: 'auth',
     initialState : {
-        user: initialUser
+        customer: initialCustomer,
+        admin: initalAdmin
     },
 
     reducers:{
-        setCurrentUser: (state, action) => {
-            state.user = action.payload
+        CURRENT_CUSTOMER: (state, action) => {
+            state.customer = action.payload
         },
-        logoutSuccess: (state, action) => {
-            state.user = null
-        }
+        CURRENT_ADMIN: (state, action) => {
+            state.admin = action.payload
+        },
+        LOGOUT_CUSTOMER_SUCCESS: (state, action) => {
+            state.customer = null
+        },
+        LOGOUT_ADMIN_SUCCESS: (state, action) => {
+            state.admin = null
+        },
     }
 
 })
 
 export default userSlice.reducer
 
-const { setCurrentUser, logoutSuccess } = userSlice.actions
+const { CURRENT_CUSTOMER, CURRENT_ADMIN, LOGOUT_CUSTOMER_SUCCESS, LOGOUT_ADMIN_SUCCESS } = userSlice.actions
 
-export const currentUser = () => async dispatch =>{
+export const currentCustomer = () => async dispatch =>{
     try {
-        const setUser = firebaseAuth.currentUser.providerData[0]
-        localStorage.setItem('userData', setUser)
-        dispatch(setCurrentUser(setUser))
+        const setCustomer = firebaseAuth.currentUser.providerData[0]
+        localStorage.setItem('customerData', setCustomer)
+        dispatch(CURRENT_CUSTOMER(setCustomer))
     } catch (error) {
         return error.message
     }
 }
 
+export const currentAdmin = () => async dispatch =>{
+    try {
+        const setAdmin = firebaseAuth.currentUser.providerData[0]
+        dispatch(CURRENT_ADMIN(setAdmin))
+    } catch (error) {
+        return error.message
+    }
+}
+
+
+
 export const logoutUser = () => async dispatch =>{
     try {
         await firebaseAuth.signOut()
-        localStorage.removeItem('userData')
-        dispatch(logoutSuccess())
+        localStorage.removeItem('customerData')
+        dispatch(LOGOUT_CUSTOMER_SUCCESS())
+    } catch (error) {
+        return error.message
+    }
+}
+
+export const logoutAdmin = () => async dispatch =>{
+    try {
+        await firebaseAuth.signOut()
+        dispatch(LOGOUT_ADMIN_SUCCESS())
     } catch (error) {
         return error.message
     }

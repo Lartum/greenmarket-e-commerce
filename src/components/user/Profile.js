@@ -1,9 +1,9 @@
 import React from 'react'
 import { Card } from 'semantic-ui-react'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 
 const Profile = () => {
-    const { user } = useSelector(state => state.auth)
+    // const { user } = useSelector(state => state.auth)
     return (
         <Card>
             <Card.Content>
